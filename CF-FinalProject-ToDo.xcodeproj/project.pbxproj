@@ -41,17 +41,17 @@
 		709794BD7BDC1E148B5B518D /* Pods-CF-FinalProject-ToDoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CF-FinalProject-ToDoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CF-FinalProject-ToDoUITests/Pods-CF-FinalProject-ToDoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9AAA4328F2D0101F9B3C3D20 /* Pods_CF_FinalProject_ToDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CF_FinalProject_ToDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82948481F70851C00F14D93 /* ToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDo.xcdatamodel; sourceTree = "<group>"; };
-		B829484A1F708E3C00F14D93 /* DataEntryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntryController.swift; sourceTree = "<group>"; };
+		B829484A1F708E3C00F14D93 /* DataEntryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataEntryController.swift; path = "CF-FinalProject-ToDo/DataEntryController.swift"; sourceTree = SOURCE_ROOT; };
 		B85D137C20375BAC0087BCFB /* CF-FinalProject-ToDo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CF-FinalProject-ToDo.entitlements"; sourceTree = "<group>"; };
-		B86CC7871F91385A0052B618 /* TaskEntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEntryController.swift; sourceTree = "<group>"; };
+		B86CC7871F91385A0052B618 /* TaskEntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TaskEntryController.swift; path = "CF-FinalProject-ToDo/TaskEntryController.swift"; sourceTree = SOURCE_ROOT; };
 		B87C30F31F6999DF007D0B2E /* CF-FinalProject-ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CF-FinalProject-ToDo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B87C30F61F6999DF007D0B2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B87C30F61F6999DF007D0B2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "CF-FinalProject-ToDo/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		B87C30FB1F6999DF007D0B2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B87C30FD1F6999DF007D0B2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B87C31001F6999DF007D0B2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B87C31021F6999DF007D0B2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B87C31081F699B32007D0B2E /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterViewController.swift; path = ../MasterViewController.swift; sourceTree = "<group>"; };
-		B87C310A1F699B86007D0B2E /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = ../DetailViewController.swift; sourceTree = "<group>"; };
+		B87C31081F699B32007D0B2E /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = SOURCE_ROOT; };
+		B87C310A1F699B86007D0B2E /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		B8AD471D201A82F000DB26EE /* CF-FinalProject-ToDoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CF-FinalProject-ToDoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8AD471F201A82F000DB26EE /* CF_FinalProject_ToDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CF_FinalProject_ToDoUITests.swift; sourceTree = "<group>"; };
 		B8AD4721201A82F000DB26EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -132,8 +132,8 @@
 			children = (
 				B85D137C20375BAC0087BCFB /* CF-FinalProject-ToDo.entitlements */,
 				B87C30F61F6999DF007D0B2E /* AppDelegate.swift */,
-				B829484A1F708E3C00F14D93 /* DataEntryController.swift */,
 				B87C31081F699B32007D0B2E /* MasterViewController.swift */,
+				B829484A1F708E3C00F14D93 /* DataEntryController.swift */,
 				B86CC7871F91385A0052B618 /* TaskEntryController.swift */,
 				B87C310A1F699B86007D0B2E /* DetailViewController.swift */,
 				B87C30FA1F6999DF007D0B2E /* Main.storyboard */,
