@@ -5,6 +5,9 @@
 //  Created by Chris Hahn on 9/13/17.
 //  Copyright © 2017 Sturnella. All rights reserved.
 //
+// *******  Controller for the purpose of viewing tasks.  Contains "newTaskButton" to present AlertController to add new tasks.     *******
+// *******  newTaskButton calls the "createTask" function.  viewWillAppear handles some refreshing and assigning? lists to tasks?   *******
+// *******  viewDidLoad has code to create an edit button on the right and a button for returning to the lists                      *******
 
 import UIKit
 import CoreData
@@ -24,6 +27,19 @@ class DetailViewController: UITableViewController, NSFetchedResultsControllerDel
         if let tasks = list?.childTasks {
             self.tasks = tasks.allObjects as! [Task]
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.refreshControl?.addTarget(self, action: #selector(DetailViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        
+        navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+        navigationItem.leftItemsSupplementBackButton = true
+        
+        self.clearsSelectionOnViewWillAppear = false
+        
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     // MARK: - Add task descriptions ...
@@ -105,23 +121,21 @@ class DetailViewController: UITableViewController, NSFetchedResultsControllerDel
             tableView.setEditing(false, animated: true)
         }
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.refreshControl?.addTarget(self, action: #selector(DetailViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
-        
-        navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-        navigationItem.leftItemsSupplementBackButton = true
-        
-        self.clearsSelectionOnViewWillAppear = false
     
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
+    // Override to support rearranging the table view.  in previous versions was moveRowAtIndexPath
+    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+        print("")
+        print("detailVC moveRowAt function")
+        print("")
+        let taskObj = tasks[fromIndexPath.row]
+        tasks.remove(at: fromIndexPath.row)
+        tasks.insert(taskObj, at: to.row)
     }
     
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-        
+    // Override to support conditional rearranging of the table view.  in previous versions was canMoveRowAtIndexPath
+    override func tableView(_ tableview: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the item to be re-orderable.
+        return true
     }
     
     func handleRefresh(_ refreshControl: UIRefreshControl) {

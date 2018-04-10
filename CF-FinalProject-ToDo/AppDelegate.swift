@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
          controller.managedObjectContext = self.persistentContainer.viewContext
         ........... managedObjectContext is a variable defined in MasterViewController ............
          */
-        print("breakpoint 1 - appDelegate")
+        //print("breakpoint 1 - appDelegate")
         
         Instabug.start(withToken: "906cae0853cce859f1a042d4b41648fa", invocationEvent: .shake)
       
@@ -47,10 +47,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         if topAsDetailController.list == nil {
         //if topAsDetailController.List.isEmpty {
             // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
-            print("breakpoint 2 - appDelegate")
+            //print("breakpoint 2 - appDelegate")
             return true
         }
-        print("breakpoint 3 - appDelegate")
+        //print("breakpoint 3 - appDelegate")
         return false
     }
     
@@ -77,11 +77,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
                  * The store could not be migrated to the current model version.
                  Check the error message to determine what the actual problem was.
                  */
-                print("breakpoint 4 - appDelegate")
+                //print("breakpoint 4 - appDelegate")
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
-        print("breakpoint 5 - appDelegate")
+        //print("breakpoint 5 - appDelegate")
         return container
     }()
     
@@ -91,7 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
-                print("breakpoint 6 - appDelegate - savedContext")
+                //print("breakpoint 6 - appDelegate - savedContext")
                 try context.save()
                 //NotificationCenter.default.post(name: .reload, object: nil)
             } catch {

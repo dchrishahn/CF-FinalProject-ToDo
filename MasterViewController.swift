@@ -31,7 +31,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.navigationItem.leftBarButtonItem = self.editButtonItem
-        print("breakpoint 1 - MstrVC - viewDidLoad")
+//        print("breakpoint 1 - MstrVC - viewDidLoad")
     }
     
     func reloadTableData(_ notification: Notification) {
@@ -73,9 +73,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         do {
             let results = try managedContext.fetch(fetchRequest)
             lists = results as! [List]
-            print("breakpoint 2 - MstrVC - viewWillAppear")
-            //print("printing lists from MstrVC in the viewWillAppear function")
-            //print(lists)
+//            print("breakpoint 2 - MstrVC - viewWillAppear")
+//            print("printing lists from MstrVC in the viewWillAppear function")
+//            print(lists)
             
         } catch let error as NSError {
             print("Fetching Error: \(error.userInfo)")
@@ -85,12 +85,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        print("breakpoint 3 - MstrVC - numOfSections")
+//        print("breakpoint 3 - MstrVC - numOfSections")
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("breakpoint 4 - MstrVC - numOfRows")
+//        print("breakpoint 4 - MstrVC - numOfRows")
         return lists.count
     }
 
@@ -98,10 +98,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let list = lists[indexPath.row]
         let listTitle = list.value(forKey: "listTitle")
-        print("breakpoint 5 - MstrVC - cellForRowAt")
-        print("...next line is listTitle value")
-        print(listTitle as Any)
-        print(" ...")
+//        print("breakpoint 5 - MstrVC - cellForRowAt")
+//        print("...next line is listTitle value")
+//        print(listTitle as Any)
+//        print(" ...")
         cell.textLabel?.text = "\(listTitle!)"
         //cell.textLabel?.text = states[indexPath.row].title
         return cell
@@ -140,8 +140,17 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-        print("breakpoint 6 - MstrVC")
+//        print("breakpoint 6 - MstrVC")
+        let listObj = lists[fromIndexPath.row]
+        lists.remove(at: fromIndexPath.row)
+        lists.insert(listObj, at: to.row)
         
+    }
+    
+    // Override to support conditional rearranging of the table view.
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the item to be re-orderable.
+        return true
     }
     
     // MARK: - Add a new list
@@ -160,7 +169,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         popover.delegate = self
         
         present(viewController, animated: true, completion:nil)
-        print("breakpoint 7 - MstrVC - newListButton")
+//        print("breakpoint 7 - MstrVC - newListButton")
     }
     
     // MARK: - Segue to List creation or the DetailViewController

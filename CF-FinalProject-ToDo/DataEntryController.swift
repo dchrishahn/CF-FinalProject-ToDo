@@ -61,7 +61,7 @@ class DataEntryController: UIViewController, UITableViewDelegate, UIPopoverPrese
                 delegate.didAddNewData()
             }
             
-            print(" ... printing lists and tasks from DataEntryController after appends ... ")
+//            print(" ... printing lists and tasks from DataEntryController after appends ... ")
             print(lists)
             //print(tasks)
             
